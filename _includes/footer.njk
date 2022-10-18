@@ -46,6 +46,14 @@
 <dialog id="resourceForm">
   <form class="container" name="updateResource" netlify>
     <div class="columns">
+      <div class="column is-12">
+        <p class="title is-3">Let us know what needs updating</p>
+        <p>
+          We need to know somethings to make sure that our resources are properly maintained.<br/>
+          Please add the name of the resource, what needs updating, the new information, and any sources.<br/>
+          If you're wanting to add a new update, just say "new update" where we ask for the name!
+        </p>
+      </div>
       <div class="column is-4">
         <label>
           Which resource needs to be updated?
@@ -55,7 +63,7 @@
       <div class="column is-4">
         <label>
           What is the update?
-          <input name="what" type="text" />
+          <textarea name="what" />
         </label>
       </div>
       <div class="column is-4">
