@@ -6,12 +6,9 @@ title: Once
 
 <body class="is-flex is-flex-direction-column">
   {% include "nav.njk" %}
-
-  {% topIndexAd %}
-
-  {{ content | safe }}
-
+  <main class="container">
+    {{ content | safe }}
+  </main>
   {% include "footer.njk" %}
 </body>
-
 </html>
