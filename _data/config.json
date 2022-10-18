@@ -1,10 +1,10 @@
 {
-  "title": "Once",
+  "title": " Resources And Help",
   "url": "/",
   "domain": "https://once-eleventy.netlify.app",
-  "language": "es",
+  "language": "en",
   "logoUrl": "/_images/once.png",
-  "search": true,
+  "search": false,
   "showCookiesAdvice": false,
   "cookiesAdviceText": "Cookies advice text",
   "cookiesAdviceMoreInfoAnchor": "More Info",
@@ -12,40 +12,21 @@
   "googleAnalyticsID": "",
   "footerLinks": [
     {
-      "anchor": "Legal Advice",
-      "url": "#"
-    },
-    {
-      "anchor": "Cookies Advice",
-      "url": "#"
+      "url":"https://github.com/gingerchew/resourcesand.help",
+      "anchor":"See an issue or a resource that needs updating? Let us know here!"
     }
   ],
-  "navbarMenu": [
-    {
-      "anchor": "About",
-      "url": "/about/"
-    },
-    {
-      "anchor": "Contact",
-      "url": "#"
-    }
-  ],
-  "navbarButtons": [
-    {
-      "anchor": "Suscribe",
-      "class": "is-small is-danger",
-      "url": "about"
-    }
-  ],
+  "navbarMenu": [],
+  "navbarButtons": [],
   "social": {
-    "facebook": "https://facebook.com",
-    "twitter": "https://twitter.com",
-    "pinterest": "https://pinterest.com",
-    "instagram": "https://instagram.com",
-    "github": "https://github.com"
+    "facebook": "",
+    "twitter": "",
+    "pinterest": "",
+    "instagram": "",
+    "github": "https://github.com/gingerchew/resourcesand.help"
   },
-  "showShareButtons": true,
-  "showDate": true,
-  "showRelatedPosts": true,
+  "showShareButtons": false,
+  "showDate": false,
+  "showRelatedPosts": false,
   "relatedPostsTitle": "Related Posts"
 }
