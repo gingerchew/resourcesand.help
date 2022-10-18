@@ -26,7 +26,7 @@ const closeModal = ({ target }) => {
 		dialogOpen = false;
 		document.removeEventListener('click', closeModal, true);
 	}
-}
+};
 resourceUpdate.addEventListener('click', () => {
 	if (dialogOpen) {
 		resourceForm.close();
@@ -36,8 +36,8 @@ resourceUpdate.addEventListener('click', () => {
 		document.addEventListener('click', closeModal, true);
 		dialogOpen = true;
 	}
-	console.log(resourceForm.hasAttribute('open'));
-})
+});
+
 /** <speedlify-score> init */
 ;(function() {
 	if(!("customElements" in window) || !("fetch" in window)) {
