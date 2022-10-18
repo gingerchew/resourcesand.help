@@ -6,12 +6,14 @@ specifiers:
   clean-css: ^5.1.2
   eleventy-plugin-purgecss: ^0.3.0
   html-minifier: ^4.0.0
+  speedlify-score: ^2.0.2
   terser: ^5.7.0
 
 dependencies:
   clean-css: 5.3.1
   eleventy-plugin-purgecss: 0.3.0
   html-minifier: 4.0.0
+  speedlify-score: 2.0.2
   terser: 5.15.1
 
 devDependencies:
@@ -2022,6 +2024,10 @@ packages:
   /source-map/0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+
+  /speedlify-score/2.0.2:
+    resolution: {integrity: sha512-FAFunl3H/faGETUX0tMh/fU0CZs5afqPR6Qm3I8xPVo9iLOZVhiDA6pUm5owXq4rSEb45y3Pf8iJqE6DmZiNvA==}
+    dev: false
 
   /sprintf-js/1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
