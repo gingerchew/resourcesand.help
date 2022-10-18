@@ -1,0 +1,35 @@
+{% set rel %}
+rel="noreferrer nofollow noopener"
+{% endset %}
+<div class="column is-12">
+  <details>
+    <summary class="title is-4">{{ resource.name }} - {{ resource.collection | length }}</summary>
+    <ul>
+    {% for item in resource.collection %}
+
+        <li>
+            <span class="subtitle is-5">{{ item.name }}</span>
+            {% if item.url %}<br/><a href="{{ item.url }}" {{ rel }}>Website</a>{% endif %}
+            {% if item.chat %} - <a href="{{ item.chat }}" {{ rel }}>Chat Online</a>{% endif %}
+            {% if item.tel %}
+                <br />
+                <span>Phone: {{ item.tel }}</span>
+            {% endif %}
+            {% if item.sms %}
+                <br />
+                <span>Text: {{ item.sms }}</span>
+            {% endif %}
+            {% if item.instructions %}
+                <br />
+                <span>{{ item.instructions | replace('{sms}', item.sms)  }}</span>
+            {% endif %}
+            {% if item.language %}
+                <br />
+                <span>{{ item.language }}</span>
+            {% endif %}
+            <hr />
+        </li>
+    {% endfor %}
+    </ul>
+  </details>
+</div>
