@@ -1,7 +1,7 @@
 ---
 layout: index_layout.njk
-title: Once eleventy Theme - Demo
-description: This is a description of Once Eleventy Theme
+title: Resources and Help
+description: A collection of resources for LGBTQ+, Domestic Abuse, and Crisis and Suicide Prevention.
 eleventyExcludeFromCollections: true
 ---
 
@@ -9,7 +9,13 @@ eleventyExcludeFromCollections: true
   <div class="container">
 
     <div class="columns is-variable is-5-desktop is-multiline is-mobile">
-
+      {% for resource in resources %}
+        {% if resource.type == "notice" %}
+          {% include "resource-notice.njk" %}
+        {% elif resource.type == "collection" %}
+          {% include "resource-collection.njk" %}
+        {% endif %}
+      {% endfor %}
       {#
       {% for item in pagination.items | reverse %}
         <div class="column is-one-third-tablet is-full-mobile mb-5">
