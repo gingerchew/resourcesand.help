@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Web Share API
-
+/*
 shareMobileButton = document.getElementById("share-mobile");
 if (navigator.share) {
   shareMobileButton.addEventListener('click', function(){
@@ -129,3 +129,10 @@ function search() {
 for (icon of searchIcons) {
   icon.addEventListener("click", launchSearchBox);
 }
+*/
+
+const resourceUpdate = document.getElementById('resourceUpdate');
+
+resourceUpdate.addEventListener('click', () => {
+  
+})

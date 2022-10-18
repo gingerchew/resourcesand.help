@@ -5,14 +5,15 @@
         <div class="level-item">
           <p class="has-text-centered-mobile">
             <!--<span class="has-text-weight-bold has-text-light has-text-grey-light">{{ config.title }}</span>-->
-            {% if config.footerLinks.length > 0%}
+            {# if config.footerLinks.length > 0%}
               <span class="mr-5 is-hidden-mobile"></span>
               <br class="is-hidden-desktop">
               {% set guion = joiner('-') %}
               {% for item in config.footerLinks %}
                 {{ guion() }} <a class="has-text-white" href="{{ item.url }}">{{ item.anchor }}</a>
               {% endfor %}
-            {% endif%}
+            {% endif #}
+            <button id="resourceUpdate">See an issue or a resource that needs updating? Let us know here!</button>
           </p>
         </div>
       </div>
@@ -40,7 +41,9 @@
     </div>
   </div>
 </footer>
-
+<dialog>
+  
+</dialog>
 {% if config.showCookiesAdvice %}
   {% if config.googleAnalyticsID.length > 0 %}
     <script> var analyticsID = "{{ config.googleAnalyticsID }}"</script>
