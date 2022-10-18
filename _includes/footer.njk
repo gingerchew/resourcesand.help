@@ -30,8 +30,10 @@
         </div>
         <div class="level-item">
           {% set urlWithOrigin %}{{ config.domain }}{{ page.url }}{% endset %}
-          {% if speedlify[urlWithOrigin] %}
-            <speedlify-score speedlify-url="https://www.speedlify.dev/" hash="{{ speedlify[urlWithOrigin].hash }}"></speedlify-score>
+          {% if speedlify[urlWithOrigin] and speedlify[urlWithOrigin].hash %}
+            <speedlify-score speedlify-url="https://speedlichew.netlify.app/" hash="{{ speedlify[urlWithOrigin].hash }}"></speedlify-score>
+          {% else %}
+            <speedlify-score speedlify-url="https://speedlichew.netlify.app/" url="{{ urlWithOrigin }}"></speedlify-score>
           {% endif %}
         </div>
       </div>
