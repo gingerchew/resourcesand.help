@@ -17,6 +17,7 @@
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3"
   },
   "dependencies": {
+    "@11ty/eleventy-cache-assets": "^2.3.0",
     "clean-css": "^5.1.2",
     "eleventy-plugin-purgecss": "^0.3.0",
     "html-minifier": "^4.0.0",
