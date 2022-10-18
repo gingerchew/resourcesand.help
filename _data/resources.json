@@ -1,0 +1,84 @@
+[
+    {
+        "type":"notice",
+        "message":"If you are in crisis, call 911 immediately."
+    },
+    {
+        "type":"collection",
+        "name":"Hotlines",
+        "collection":[
+            {
+                "type":"resource",
+                "name":"Suicide & Crisis Lifeline",
+                "tel":"988",
+                "url":"https://988lifeline.org",
+                "chat":"https://988lifeline.org/chat/"
+            },
+            {
+                "type":"resource",
+                "name":"Crisis Text Line",
+                "sms":"741741",
+                "instructions":"Text SIGNS to the {sms} for 24/7, anonymous, free crisis counseling"
+            },
+            {
+                "type":"resource",
+                "name":"Disaster Distress Helpline",
+                "tel":"1-800-985-5990",
+                "text":"1-800-985-5990",
+                "language":"2 for Spanish",
+                "url":"https://www.samhsa.gov/disaster-preparedness"
+            }
+        ]
+    },
+    {
+        "type":"collection",
+        "name":"Abuse/Assault/Violence",
+        "collection":[
+            {
+                "type":"resource",
+                "name":"National Domestic Abuse Hotline",
+                "tel":"1-800-799-7233",
+                "sms":"22522",
+                "instructions":"Text LOVEIS to {sms}",
+                "url":"https://www.thehotline.org/"
+            },
+            {
+                "type":"resource",
+                "name":"National Child Abuse Hotline",
+                "url":"https://childhelphotline.org/",
+                "tel":"1-800-422-4453",
+                "sms":"1-800-422-4453"
+            },
+            {
+                "type":"resource",
+                "name":"National Sexual Assault Hotline",
+                "url":"https://rainn.org/",
+                "tel":"1-800-656-4673",
+                "chat":"https://hotline.rainn.org/online"
+            }
+        ]
+    },
+    {
+        "type":"collection",
+        "name":"LGBTQ+",
+        "collection": [
+            {
+                "type":"resource",
+                "name":"Trans Lifeline",
+                "url":"https://translifeline.org/",
+                "tel":"18775658860",
+                "instructions":"press 2 for spanish"
+            },
+            {
+                "type":"resource",
+                "name":"The Trevor Project's TrevorLifeline",
+                "url":"https://www.thetrevorproject.org/get-help/",
+                "tel":"18664887386"
+            }
+        ]
+    },
+    {
+        "type":"notice",
+        "message": "These resources are offered at the suggestion of https://www.cdc.gov/mentalhealth/tools-resources/individuals/. More resources can be found there that cover finding treatment, elderly care, alzheimers, and veterans/active duty military."
+    }
+]
