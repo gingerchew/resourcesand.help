@@ -1,29 +1,24 @@
----
-title: Título Artículo
-
----
-
-  {% include "head.njk" %}
+{% include "head.njk" %}
 
   <body class="is-flex is-flex-direction-column">
 
     {% include "nav.njk" %}
-
+    <main class="container">
     <section class="section is-flex-grow-1">
 
        {% topPostMinimalAd %}
 
       <div class="container articulo content">
-
-        {{ content | safe }}
-
-        {% bottomContentPostMinimalAd %}
-
+        <div class="columns is-centered">
+          <div class="column is-8">
+          {{ content | safe }}
+          </div>
+        </div>
       </div>
 
     </section>
 
-
+    </main>
     {% include "footer.njk" %}
   </body>
 
