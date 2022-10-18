@@ -44,10 +44,25 @@
   </div>
 </footer>
 <dialog id="resourceForm">
-  <form class="container">
+  <form class="container" name="updateResource" netlify>
     <div class="columns">
       <div class="column is-4">
-        <input name="" />
+        <label>
+          Which resource needs to be updated?
+          <input name="name" type="text" />
+        </label>
+      </div>
+      <div class="column is-4">
+        <label>
+          What is the update?
+          <input name="what" type="text" />
+        </label>
+      </div>
+      <div class="column is-4">
+        <label>
+          Please add your source!
+          <input name="source" type="text" />
+        </label>
       </div>
     </div>
   </form>
