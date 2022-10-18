@@ -13,13 +13,15 @@
                 "name":"Suicide & Crisis Lifeline",
                 "tel":"988",
                 "url":"https://988lifeline.org",
-                "chat":"https://988lifeline.org/chat/"
+                "chat":"https://988lifeline.org/chat/",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             },
             {
                 "type":"resource",
                 "name":"Crisis Text Line",
                 "sms":"741741",
-                "instructions":"Text SIGNS to the {sms} for 24/7, anonymous, free crisis counseling"
+                "instructions":"Text SIGNS to the {sms} for 24/7, anonymous, free crisis counseling",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             },
             {
                 "type":"resource",
@@ -27,7 +29,8 @@
                 "tel":"1-800-985-5990",
                 "text":"1-800-985-5990",
                 "language":"Press 2 for Spanish",
-                "url":"https://www.samhsa.gov/disaster-preparedness"
+                "url":"https://www.samhsa.gov/disaster-preparedness",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             }
         ]
     },
@@ -41,21 +44,24 @@
                 "tel":"1-800-799-7233",
                 "sms":"22522",
                 "instructions":"Text LOVEIS to {sms}",
-                "url":"https://www.thehotline.org/"
+                "url":"https://www.thehotline.org/",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             },
             {
                 "type":"resource",
                 "name":"National Child Abuse Hotline",
                 "url":"https://childhelphotline.org/",
                 "tel":"1-800-422-4453",
-                "sms":"1-800-422-4453"
+                "sms":"1-800-422-4453",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             },
             {
                 "type":"resource",
                 "name":"National Sexual Assault Hotline",
                 "url":"https://rainn.org/",
                 "tel":"1-800-656-4673",
-                "chat":"https://hotline.rainn.org/online"
+                "chat":"https://hotline.rainn.org/online",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             }
         ]
     },
@@ -68,13 +74,15 @@
                 "name":"Trans Lifeline",
                 "url":"https://translifeline.org/",
                 "tel":"18775658860",
-                "instructions":"Press 2 for Spanish"
+                "instructions":"Press 2 for Spanish",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             },
             {
                 "type":"resource",
                 "name":"The Trevor Project's TrevorLifeline",
                 "url":"https://www.thetrevorproject.org/get-help/",
-                "tel":"18664887386"
+                "tel":"18664887386",
+                "source":"https://www.cdc.gov/mentalhealth/tools-resources/individuals/"
             }
         ]
     },
