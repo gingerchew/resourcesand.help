@@ -29,7 +29,10 @@
           </p>
         </div>
         <div class="level-item">
-          <speedlify-score speedlify-url="https://www.speedlify.dev/" url="{{ config.domain }}{{ page.url }}"></speedlify-score>
+          {% set urlWithOrigin %}{{ config.domain }}{{ page.url }}{% endset %}
+          {% if speedlify[urlWithOrigin] %}
+            <speedlify-score speedlify-url="https://www.speedlify.dev/" hash="{{ speedlify[urlWithOrigin].hash }}"></speedlify-score>
+          {% endif %}
         </div>
       </div>
     </div>
