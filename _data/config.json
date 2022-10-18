@@ -1,5 +1,5 @@
 {
-  "title": " Resources And Help",
+  "title": " ResourcesAnd.Help",
   "url": "/",
   "domain": "https://once-eleventy.netlify.app",
   "language": "en",
@@ -16,7 +16,12 @@
       "anchor":"See an issue or a resource that needs updating? Let us know here!"
     }
   ],
-  "navbarMenu": [],
+  "navbarMenu": [
+    {
+      "url":"/why/",
+      "anchor":"Why?"
+    }
+  ],
   "navbarButtons": [],
   "social": {
     "facebook": "",
