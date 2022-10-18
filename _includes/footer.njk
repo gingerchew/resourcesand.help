@@ -4,15 +4,6 @@
       <div class="level-left">
         <div class="level-item">
           <p class="has-text-centered-mobile">
-            <!--<span class="has-text-weight-bold has-text-light has-text-grey-light">{{ config.title }}</span>-->
-            {# if config.footerLinks.length > 0%}
-              <span class="mr-5 is-hidden-mobile"></span>
-              <br class="is-hidden-desktop">
-              {% set guion = joiner('-') %}
-              {% for item in config.footerLinks %}
-                {{ guion() }} <a class="has-text-white" href="{{ item.url }}">{{ item.anchor }}</a>
-              {% endfor %}
-            {% endif #}
             <button class="btn-link" id="resourceUpdate">See an issue or a resource that needs updating? Let us know here!</button>
           </p>
         </div>
@@ -39,53 +30,46 @@
         </div>
         <div class="level-item">
           <speedlify-score speedlify-url="https://www.speedlify.dev/" url="{{ config.domain }}{{ page.url }}"></speedlify-score>
+        </div>
       </div>
     </div>
   </div>
 </footer>
 <dialog id="resourceForm">
   <form class="container" name="updateResource" netlify>
-    <div class="columns">
+    <div class="columns is-multiline is-align-items-end">
       <div class="column is-12">
         <p class="title is-3">Let us know what needs updating</p>
         <p>
           We need to know somethings to make sure that our resources are properly maintained.<br/>
           Please add the name of the resource, what needs updating, the new information, and any sources.<br/>
-          If you're wanting to add a new update, just say "new update" where we ask for the name!
+          If you're wanting to add a new update, add "new update" where we ask for the name!
         </p>
       </div>
-      <div class="column is-4">
-        <label>
-          Which resource needs to be updated?
-          <input name="name" type="text" />
-        </label>
+      <div class="column is-7 field">
+        <label class="label">Which resource needs to be updated?</label>
+        <div class="control">
+          <input name="name" type="text" class="input" />
+        </div>
       </div>
-      <div class="column is-4">
-        <label>
-          What is the update?
-          <textarea name="what" />
-        </label>
+      <div class="column is-7 field">
+        <label class="label">What is the update?</label>
+        <div class="control">
+          <textarea name="what" class="textarea"></textarea>
+        </div>
       </div>
-      <div class="column is-4">
-        <label>
-          Please add your source!
-          <input name="source" type="text" />
-        </label>
+      <div class="column is-7 field">
+        <label class="label">Please add your source!</label>
+        <div class="control">
+          <input name="source" type="text" class="input" />
+        </div>
       </div>
+      <div class="column is-5 field">
+        <div class="control">
+          <input type="submit" value="Submit Update" class="button is-link" />
+        </div>
+      </div>
+      <div></div>
     </div>
   </form>
 </dialog>
-{% if config.showCookiesAdvice %}
-  {% if config.googleAnalyticsID.length > 0 %}
-    <script> var analyticsID = "{{ config.googleAnalyticsID }}"</script>
-  {% endif %}
-  {% include "cookies-advice.njk" %}
-{% endif %}
-
-<!-- Scripts -->
-{% set js %}
-  {% include "scripts.js" %}
-{% endset %}
-<script type="module">
-  {{ js | jsmin | safe }}
-</script>
