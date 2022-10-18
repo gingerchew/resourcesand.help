@@ -1,3 +1,4 @@
+
 // Navbar
 document.addEventListener("DOMContentLoaded", () => {
   const $navbarBurgers = Array.prototype.slice.call(
@@ -16,123 +17,175 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Web Share API
-/*
-shareMobileButton = document.getElementById("share-mobile");
-if (navigator.share) {
-  shareMobileButton.addEventListener('click', function(){
-    navigator
-    .share({
-      title: document.title,
-      url: window.location.href,
-    })
-    .then(() => {
-      console.log("Thanks for sharing!");
-    })
-    .catch(console.error);
-  })
-} else {
-  shareMobileButton.style.display = "none";
-  document.getElementById('search-mobile').classList.add('ml-auto')
+const resourceUpdate = document.getElementById('resourceUpdate'),
+	resourceForm = document.getElementById('resourceForm');
+let dialogOpen = false;
+const closeModal = ({ target }) => {
+	if (target === resourceForm) {
+		resourceForm.close();
+		dialogOpen = false;
+		document.removeEventListener('click', closeModal, true);
+	}
 }
-
-// Search
-
-const searchIcons = document.querySelectorAll(".search-icon");
-
-let searchIndex = [];
-
-function launchSearchBox() {
-  if (document.querySelector(".search-box")) {
-    document.querySelector(".search-box").classList.add("is-active");
-  } else {
-    const searchBox = document.createElement("div");
-    searchBox.classList.add(
-      "modal",
-      "is-active",
-      "search-box",
-      "is-justify-content-flex-start"
-    );
-    searchBox.innerHTML = `
-      <div class="modal-background" onclick="closeSearchBox()"></div>
-      <div class="modal-content">
-        <div class="section mx-5">
-          <div class="card">
-            <div class="panel">
-              <div class="panel-heading">Search</div>
-              <div class="panel-block">
-                <p class="control has-icons-left">
-                  <input class="input" id="input-search" type="text" placeholder="search..." onkeyup="search()">
-                  <span class="icon is-left">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" style="vertical-align: -0.125em;" width="18" height="18" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path class="clr-i-outline clr-i-outline-path-1" d="M16.33 5.05A10.95 10.95 0 1 1 5.39 16A11 11 0 0 1 16.33 5.05m0-2.05a13 13 0 1 0 13 13a13 13 0 0 0-13-13z" fill="#4a4a4a"/><path class="clr-i-outline clr-i-outline-path-2" d="M35 33.29l-7.37-7.42l-1.42 1.41l7.37 7.42A1 1 0 1 0 35 33.29z" fill="#4a4a4a"/></svg>
-                  </span>
-                </p>
-              </div>
-              <div id="search-results"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="modal-close is-large" aria-label="close" onclick="closeSearchBox()"></button>
-    `;
-    document.querySelector("footer").appendChild(searchBox);
-  }
-
-  if (searchIndex.length < 1) {
-    fetch("/search.json")
-      .then((response) => response.json())
-      .then((data) => (searchIndex = data.search));
-  }
-}
-
-function closeSearchBox() {
-  document.querySelector(".search-box").classList.remove("is-active");
-  cleanSearch();
-  document.getElementById("input-search").value = "";
-}
-
-function cleanSearch() {
-  document.getElementById("search-results").innerHTML = "";
-}
-
-function search() {
-  cleanSearch();
-
-  let results = [];
-
-  if (document.getElementById("input-search").value.length > 1) {
-    results = searchIndex.filter((item) => {
-      return item.title
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .includes(
-          document
-            .getElementById("input-search")
-            .value.toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-        );
-    });
-  }
-
-  results.forEach((item) => {
-    const resultado = document.createElement("div");
-    resultado.classList.add("panel-block");
-    resultado.innerHTML = `
-      <a href="${item.url}">${item.title}</a>
-    `;
-    document.getElementById("search-results").appendChild(resultado);
-  });
-}
-
-for (icon of searchIcons) {
-  icon.addEventListener("click", launchSearchBox);
-}
-*/
-
-const resourceUpdate = document.getElementById('resourceUpdate');
-
 resourceUpdate.addEventListener('click', () => {
-  
+	if (dialogOpen) {
+		resourceForm.close();
+		dialogOpen = false
+	} else {
+		resourceForm.showModal();
+		document.addEventListener('click', closeModal, true);
+		dialogOpen = true;
+	}
+	console.log(resourceForm.hasAttribute('open'));
 })
+/** <speedlify-score> init */
+;(function() {
+	if(!("customElements" in window) || !("fetch" in window)) {
+		return;
+	}
+
+	const NAME = "speedlify-score";
+
+	class SpeedlifyUrlStore {
+		constructor() {
+			this.fetches = {};
+			this.responses = {};
+			this.urls = {};
+		}
+
+		static normalizeUrl(speedlifyUrl, path) {
+			let host = `${speedlifyUrl}${speedlifyUrl.endsWith("/") ? "" : "/"}`
+			return host + (path.startsWith("/") ? path.substr(1) : path);
+		}
+
+		async fetch(speedlifyUrl, url) {
+			if(this.urls[speedlifyUrl]) {
+				return this.urls[speedlifyUrl][url] ? this.urls[speedlifyUrl][url].hash : false;
+			}
+
+			if(!this.fetches[speedlifyUrl]) {
+				this.fetches[speedlifyUrl] = fetch(SpeedlifyUrlStore.normalizeUrl(speedlifyUrl, "api/urls.json"));
+			}
+
+			let response = await this.fetches[speedlifyUrl];
+
+			if(!this.responses[speedlifyUrl]) {
+				this.responses[speedlifyUrl] = response.json();
+			}
+
+			let json = await this.responses[speedlifyUrl];
+
+			this.urls[speedlifyUrl] = json;
+
+			return json[url] ? json[url].hash : false;
+		}
+	}
+
+	const urlStore = new SpeedlifyUrlStore();
+
+	customElements.define(NAME, class extends HTMLElement {
+		connectedCallback() {
+			this.speedlifyUrl = this.getAttribute("speedlify-url");
+			this.shorthash = this.getAttribute("hash");
+			this.rawData = this.getAttribute("raw-data");
+			this.url = this.getAttribute("url") || window.location.href;
+			this.urlStore = urlStore;
+
+			if(!this.rawData && !this.speedlifyUrl) {
+				console.log(`Missing \`speedlify-url\` attributes in <${NAME}>`);
+				return;
+			}
+
+			// lol async in constructors
+			this.init();
+		}
+
+		async init() {
+			if(this.rawData) {
+				let data = JSON.parse(this.rawData);
+				this.setTimeAttributes(data);
+				this.innerHTML = this.render(data);
+				return;
+			}
+
+			let hash = this.shorthash;
+			if(!hash) {
+				// It’s much faster if you supply a `hash` attribute!
+				hash = await this.urlStore.fetch(this.speedlifyUrl, this.url);
+			}
+
+			if(!hash) {
+				console.error( `<${NAME}> could not find hash for URL: ${this.url}` );
+				return;
+			}
+
+			let data = await this.fetchData(hash);
+			this.setTimeAttributes(data);
+			this.innerHTML = this.render(data);
+		}
+
+		async fetchData(hash) {
+			let response = await fetch(SpeedlifyUrlStore.normalizeUrl(this.speedlifyUrl, `api/${hash}.json`));
+			let json = await response.json();
+
+			return json;
+		}
+
+		setTimeAttributes(data) {
+			if(data.timestamp) {
+				this.setAttribute("title", `Results from ${this.timeAgo(data.timestamp)}`);
+				this.setAttribute("data-timestamp", data.timestamp)
+			}
+		}
+
+		timeAgo(timestamp) {
+			let days = Math.floor((new Date() - timestamp) / (1000*60*60*24));
+			return `${days} day${days != 1 ? "s" : ""} ago`;
+		}
+
+		getScoreClass(score) {
+			if(score < .5) {
+				return "speedlify-score speedlify-score-bad";
+			}
+			if(score < .9) {
+				return "speedlify-score speedlify-score-ok";
+			}
+			return "speedlify-score speedlify-score-good";
+		}
+
+		getScoreTemplate(data) {
+			let scores = [];
+			scores.push(`<span title="Performance" class="${this.getScoreClass(data.lighthouse.performance)}">${parseInt(data.lighthouse.performance * 100, 10)}</span>`);
+			scores.push(`<span title="Accessibility" class="${this.getScoreClass(data.lighthouse.accessibility)}">${parseInt(data.lighthouse.accessibility * 100, 10)}</span>`);
+			scores.push(`<span title="Best Practices" class="${this.getScoreClass(data.lighthouse.bestPractices)}">${parseInt(data.lighthouse.bestPractices * 100, 10)}</span>`);
+			scores.push(`<span title="SEO" class="${this.getScoreClass(data.lighthouse.seo)}">${parseInt(data.lighthouse.seo * 100, 10)}</span>`);
+			return scores.join(" ");
+		}
+
+		render(data) {
+			let content = [];
+			let scoreHtml = this.getScoreTemplate(data);
+			if(!this.hasAttribute("requests") && !this.hasAttribute("weight") && !this.hasAttribute("rank") || this.hasAttribute("score")) {
+				content.push(scoreHtml);
+			}
+
+			let summarySplit = data.weight.summary.split(" • ");
+			if(this.hasAttribute("requests")) {
+				content.push(`<span class="speedlify-requests">${summarySplit[0]}</span>`);
+			}
+			if(this.hasAttribute("weight")) {
+				content.push(`<span class="speedlify-weight">${summarySplit[1]}</span>`);
+			}
+			if(this.hasAttribute("rank")) {
+				let rankUrl = this.getAttribute("rank-url");
+				content.push(`<${rankUrl ? `a href="${rankUrl}"` : "span"} class="speedlify-rank">${data.ranks.cumulative}</${rankUrl ? "a" : "span"}>`);
+			}
+			if(this.hasAttribute("rank-change") && data.previousRanks) {
+				let change = data.previousRanks.cumulative - data.ranks.cumulative;
+				content.push(`<span class="speedlify-rank-change ${change > 0 ? "up" : (change < 0 ? "down" : "same")}">${change !== 0 ? Math.abs(change) : ""}</span>`);
+			}
+
+			return content.join("");
+		}
+	});
+})();

@@ -13,7 +13,7 @@
                 {{ guion() }} <a class="has-text-white" href="{{ item.url }}">{{ item.anchor }}</a>
               {% endfor %}
             {% endif #}
-            <button id="resourceUpdate">See an issue or a resource that needs updating? Let us know here!</button>
+            <button class="btn-link" id="resourceUpdate">See an issue or a resource that needs updating? Let us know here!</button>
           </p>
         </div>
       </div>
@@ -37,12 +37,20 @@
             {% endif %}
           </p>
         </div>
+        <div class="level-item">
+          <speedlify-score speedlify-url="https://www.speedlify.dev/" url="{{ config.domain }}{{ page.url }}"></speedlify-score>
       </div>
     </div>
   </div>
 </footer>
-<dialog>
-  
+<dialog id="resourceForm">
+  <form class="container">
+    <div class="columns">
+      <div class="column is-4">
+        <input name="" />
+      </div>
+    </div>
+  </form>
 </dialog>
 {% if config.showCookiesAdvice %}
   {% if config.googleAnalyticsID.length > 0 %}
@@ -54,10 +62,7 @@
 <!-- Scripts -->
 {% set js %}
   {% include "scripts.js" %}
-  {% if config.showCookiesAdvice %}
-    {% include "cookies-advice-script.js" %}
-  {% endif %}
 {% endset %}
-<script>
+<script type="module">
   {{ js | jsmin | safe }}
 </script>

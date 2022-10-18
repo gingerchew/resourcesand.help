@@ -37,6 +37,22 @@ body > main {
   }
 }
 
+speedlify-score {
+  padding: 0.5ch 0.65ch;
+  background-color: white;
+  border-radius: calc(1em * 1000000);
+}
+
+.btn-link {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
 /* Navbar */
 @media (max-width: 1023px) {
   body {
