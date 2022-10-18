@@ -1,2 +1,2 @@
 [build.environment]
-    ELEVENTY_ENV=production
+    ELEVENTY_ENV = "production"
