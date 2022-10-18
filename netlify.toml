@@ -1,0 +1,2 @@
+[build.environment]
+    ELEVENTY_ENV=production
