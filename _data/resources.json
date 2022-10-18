@@ -1,11 +1,12 @@
 [
     {
         "type":"notice",
-        "message":"If you are in crisis, call 911 immediately."
+        "message":"If you are in crisis, call 911 or the emergency services number for your country immediately",
+        "size":1
     },
     {
         "type":"collection",
-        "name":"Hotlines",
+        "name":"Crisis and Suicide Prevention",
         "collection":[
             {
                 "type":"resource",
@@ -25,7 +26,7 @@
                 "name":"Disaster Distress Helpline",
                 "tel":"1-800-985-5990",
                 "text":"1-800-985-5990",
-                "language":"2 for Spanish",
+                "language":"Press 2 for Spanish",
                 "url":"https://www.samhsa.gov/disaster-preparedness"
             }
         ]
@@ -67,7 +68,7 @@
                 "name":"Trans Lifeline",
                 "url":"https://translifeline.org/",
                 "tel":"18775658860",
-                "instructions":"press 2 for spanish"
+                "instructions":"Press 2 for Spanish"
             },
             {
                 "type":"resource",
@@ -79,6 +80,7 @@
     },
     {
         "type":"notice",
-        "message": "These resources are offered at the suggestion of https://www.cdc.gov/mentalhealth/tools-resources/individuals/. More resources can be found there that cover finding treatment, elderly care, alzheimers, and veterans/active duty military."
+        "message": "These resources are offered at the suggestion of https://www.cdc.gov/mentalhealth/tools-resources/individuals/. More resources can be found there that cover finding treatment, elderly care, alzheimers, and veterans/active duty military.",
+        "size": 5
     }
 ]
