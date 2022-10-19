@@ -1,46 +1,37 @@
-# ONCE - Eleventy Theme
+# ResourcesAnd.Help
 
-[**Demo**](https://once-eleventy.netlify.app/)
+A collection of resources to help victims of domestic abuse, LGBTQ+, and a list of Suicide Prevention Hotlines.
 
-Personal theme made with:
+## Why?
+
+In October of 2022, Twitch streamer Amouranth revealed that she was in an abusive relationship with her husband. This led to a lot of discussion, some of it much needed. The topic that lead the discourse was about *how* we talk about abuse in chat. 
+
+The inspiration for this site came from [this tweet](https://twitter.com/bbjessTTV/status/1581745451207782401), calling on content creators, streamers in particular, to include a chat command that lists resources for hotlines and charities.
+
+With this site, the hope is to provide a place for streamers and other content creaters to send viewers to, where information is consolidated and verified.
+
+### Sources Used
+
+- [CDC](https://www.cdc.gov/mentalhealth/tools-resources/individuals/)
+
+### I have a resource!
+
+Thank you for helping expand our available resources! Submit an update on the homepage of the site by clicking the link in the footer. If you have a GitHub account, open an issue and we can add the resource that way.
+
+### Something is wrong with one of the resources!
+
+Thank you for letting us know! You can do the same as above, please include a link to the source for the issue. If you have a GitHub account, open an issue and we can add the resource that way.
+
+### How can I help?
+
+- [ ] I18n
+- [ ] Resources outside the US
+- On Going
+  - More Resources
+  - More Vetting
+
+#### This site was made using the following technology:
+
 - [Eleventy](https://www.11ty.dev/)
-- [BulmaCSS](https://bulma.io/)
-- [PurgeCSS](https://purgecss.com/)
-
-Features:
-
-- Layouts for:
-  - Pages (minimal-post.njk)
-  - Post (post.njk)
-  - Index
-  - Tag pages
-  - Error 404
-- Sitemap
-- Search by titles
-- Share Buttons
-- Links for social profiles.
-- Blocks for ads or another content
-- Cookies advice
-- Minify CSS, JS and HTML
-- Remove unused CSS
-
-## Scripts
-
-- Develop: `npm run serve`
-- Build: `npm run build`
-
-## Config Theme
-
-There is a file `_data/config.json` where you can edit your configuration.
-
-### Custom CSS y JS
-- `./src/_css/custom.css`
-- `./_includes/scripts.js`
-
-### Error 404
-
-There is a template for errors. [More information](https://www.11ty.dev/docs/quicktips/not-found/).
-
-### Ad Blocks
-
-Edit in `eleventy.js`
+- [Once Eleventy Theme](https://once-eleventy.netlify.app/)
+- [Netlify](https://www.netlify.com), for hosting and form processing
