@@ -1,6 +1,9 @@
 # ResourcesAnd.Help
 
+
 A collection of resources to help victims of domestic abuse, LGBTQ+, and a list of Suicide Prevention Hotlines.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8e47d399-f963-4cda-9ebe-de6363eab359/deploy-status)](https://app.netlify.com/sites/resourcesandhelp/deploys)
 
 ## Why?
 
