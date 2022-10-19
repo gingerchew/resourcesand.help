@@ -19,6 +19,10 @@ body {
 body > main {
   flex: 1;
 }
+a,
+.btn-link {
+  text-decoration: underline;
+}
 .navbar {
   min-height: auto;
 }
