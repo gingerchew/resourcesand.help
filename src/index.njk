@@ -16,20 +16,6 @@ eleventyExcludeFromCollections: true
           {% include "resource-collection.njk" %}
         {% endif %}
       {% endfor %}
-      {#
-      {% for item in pagination.items | reverse %}
-        <div class="column is-one-third-tablet is-full-mobile mb-5">
-          {% include "tarjeta.njk" %}
-        </div>
-      {% endfor %}
-      #}
     </div>
-    {#
-    <div class="columns">
-      <div class="column has-text-centered">
-        {% include "pagination.njk" %}
-      </div>
-    </div>
-    #}
   </div>
 </section>
