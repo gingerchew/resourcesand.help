@@ -1,20 +1,17 @@
 
 // Navbar
 document.addEventListener("DOMContentLoaded", () => {
-  const $navbarBurgers = Array.prototype.slice.call(
-    document.querySelectorAll(".navbar-burger"),
-    0
-  );
-  if ($navbarBurgers.length > 0) {
-    $navbarBurgers.forEach((el) => {
-      el.addEventListener("click", () => {
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-        el.classList.toggle("is-active");
-        $target.classList.toggle("is-active");
-      });
-    });
-  }
+	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
+	if ($navbarBurgers.length > 0) {
+		$navbarBurgers.forEach((el) => {
+			el.addEventListener("click", () => {
+				const target = el.dataset.target;
+				const $target = document.getElementById(target);
+				el.classList.toggle("is-active");
+				$target.classList.toggle("is-active");
+			});
+		});
+	}
 });
 
 const resourceUpdate = document.getElementById('resourceUpdate'),
@@ -39,8 +36,8 @@ resourceUpdate.addEventListener('click', () => {
 });
 
 /** <speedlify-score> init */
-;(function() {
-	if(!("customElements" in window) || !("fetch" in window)) {
+; (function () {
+	if (!("customElements" in window) || !("fetch" in window)) {
 		return;
 	}
 
@@ -59,17 +56,17 @@ resourceUpdate.addEventListener('click', () => {
 		}
 
 		async fetch(speedlifyUrl, url) {
-			if(this.urls[speedlifyUrl]) {
+			if (this.urls[speedlifyUrl]) {
 				return this.urls[speedlifyUrl][url] ? this.urls[speedlifyUrl][url].hash : false;
 			}
 
-			if(!this.fetches[speedlifyUrl]) {
+			if (!this.fetches[speedlifyUrl]) {
 				this.fetches[speedlifyUrl] = fetch(SpeedlifyUrlStore.normalizeUrl(speedlifyUrl, "api/urls.json"));
 			}
 
 			let response = await this.fetches[speedlifyUrl];
 
-			if(!this.responses[speedlifyUrl]) {
+			if (!this.responses[speedlifyUrl]) {
 				this.responses[speedlifyUrl] = response.json();
 			}
 
@@ -91,7 +88,7 @@ resourceUpdate.addEventListener('click', () => {
 			this.url = this.getAttribute("url") || window.location.href;
 			this.urlStore = urlStore;
 
-			if(!this.rawData && !this.speedlifyUrl) {
+			if (!this.rawData && !this.speedlifyUrl) {
 				console.log(`Missing \`speedlify-url\` attributes in <${NAME}>`);
 				return;
 			}
@@ -101,7 +98,7 @@ resourceUpdate.addEventListener('click', () => {
 		}
 
 		async init() {
-			if(this.rawData) {
+			if (this.rawData) {
 				let data = JSON.parse(this.rawData);
 				this.setTimeAttributes(data);
 				this.innerHTML = this.render(data);
@@ -109,13 +106,13 @@ resourceUpdate.addEventListener('click', () => {
 			}
 
 			let hash = this.shorthash;
-			if(!hash) {
+			if (!hash) {
 				// It’s much faster if you supply a `hash` attribute!
 				hash = await this.urlStore.fetch(this.speedlifyUrl, this.url);
 			}
 
-			if(!hash) {
-				console.error( `<${NAME}> could not find hash for URL: ${this.url}` );
+			if (!hash) {
+				console.error(`<${NAME}> could not find hash for URL: ${this.url}`);
 				return;
 			}
 
@@ -132,22 +129,22 @@ resourceUpdate.addEventListener('click', () => {
 		}
 
 		setTimeAttributes(data) {
-			if(data.timestamp) {
+			if (data.timestamp) {
 				this.setAttribute("title", `Results from ${this.timeAgo(data.timestamp)}`);
 				this.setAttribute("data-timestamp", data.timestamp)
 			}
 		}
 
 		timeAgo(timestamp) {
-			let days = Math.floor((new Date() - timestamp) / (1000*60*60*24));
+			let days = Math.floor((new Date() - timestamp) / (1000 * 60 * 60 * 24));
 			return `${days} day${days != 1 ? "s" : ""} ago`;
 		}
 
 		getScoreClass(score) {
-			if(score < .5) {
+			if (score < .5) {
 				return "speedlify-score speedlify-score-bad";
 			}
-			if(score < .9) {
+			if (score < .9) {
 				return "speedlify-score speedlify-score-ok";
 			}
 			return "speedlify-score speedlify-score-good";
@@ -165,22 +162,22 @@ resourceUpdate.addEventListener('click', () => {
 		render(data) {
 			let content = [];
 			let scoreHtml = this.getScoreTemplate(data);
-			if(!this.hasAttribute("requests") && !this.hasAttribute("weight") && !this.hasAttribute("rank") || this.hasAttribute("score")) {
+			if (!this.hasAttribute("requests") && !this.hasAttribute("weight") && !this.hasAttribute("rank") || this.hasAttribute("score")) {
 				content.push(scoreHtml);
 			}
 
 			let summarySplit = data.weight.summary.split(" • ");
-			if(this.hasAttribute("requests")) {
+			if (this.hasAttribute("requests")) {
 				content.push(`<span class="speedlify-requests">${summarySplit[0]}</span>`);
 			}
-			if(this.hasAttribute("weight")) {
+			if (this.hasAttribute("weight")) {
 				content.push(`<span class="speedlify-weight">${summarySplit[1]}</span>`);
 			}
-			if(this.hasAttribute("rank")) {
+			if (this.hasAttribute("rank")) {
 				let rankUrl = this.getAttribute("rank-url");
 				content.push(`<${rankUrl ? `a href="${rankUrl}"` : "span"} class="speedlify-rank">${data.ranks.cumulative}</${rankUrl ? "a" : "span"}>`);
 			}
-			if(this.hasAttribute("rank-change") && data.previousRanks) {
+			if (this.hasAttribute("rank-change") && data.previousRanks) {
 				let change = data.previousRanks.cumulative - data.ranks.cumulative;
 				content.push(`<span class="speedlify-rank-change ${change > 0 ? "up" : (change < 0 ? "down" : "same")}">${change !== 0 ? Math.abs(change) : ""}</span>`);
 			}
@@ -194,4 +191,4 @@ const details = document.querySelectorAll('details');
 const closeAll = (el) => details.forEach($el => $el !== el && $el.removeAttribute('open'));
 details.forEach(el => {
 	el.addEventListener('toggle', (e) => e.target.hasAttribute('open') && closeAll(e.target));
-})
+});

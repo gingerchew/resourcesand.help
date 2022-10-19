@@ -6,7 +6,7 @@
             </div>
             {%- for item in collections.all|relacionados(tags, page.inputPath, 3) -%}
                 <div class="column is-full-mobile is-one-third-tablet">
-                    {% include "tarjeta.njk" %}
+                    {# include "tarjeta.njk" #}
                 </div>
             {%- endfor -%}
         </div>
