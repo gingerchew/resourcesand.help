@@ -189,3 +189,9 @@ resourceUpdate.addEventListener('click', () => {
 		}
 	});
 })();
+
+const details = document.querySelectorAll('details');
+const closeAll = (el) => details.forEach($el => $el !== el && $el.removeAttribute('open'));
+details.forEach(el => {
+	el.addEventListener('toggle', (e) => e.target.hasAttribute('open') && closeAll(e.target));
+})
