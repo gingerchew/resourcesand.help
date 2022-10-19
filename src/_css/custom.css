@@ -109,3 +109,11 @@ speedlify-score {
 .social-flotante li a {
   margin: 5px 0;
 }
+
+.source small:first-of-type::before {
+  content: 'Related Resources: ';
+  font-weight: 700;
+}
+.source small:not(:last-of-type)::after {
+  content: ', '
+}

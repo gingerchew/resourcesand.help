@@ -20,6 +20,10 @@
     {
       "url":"/why/",
       "anchor":"About"
+    },
+    {
+      "url":"/sources/",
+      "anchor":"Sources"
     }
   ],
   "navbarButtons": [],

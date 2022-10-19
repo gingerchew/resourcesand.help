@@ -1,0 +1,30 @@
+---
+title: Sources
+layout: sources.njk
+---
+<li class="column is-12 p-5">
+    <blockquote class="p-3 has-background-info-light">
+        <p class="is-text-info-dark">To make sure our information as verifiable as possible, all sources are listed here for anyone to view. The links here are the same <b>direct links</b> to where the related resource information was gathered.</p>
+        <p class="is-text-info-dark">If a source listed here is no longer reliable or is untrustworthy, please let us know by clicking the link in the footer and filling out the form.</p>
+    </blockquote>
+</li>
+{% for source in sources %}
+    {% if source.url %}
+        <li class="column is-4 p-5 source">
+            <p class="subtitle is-4 m-0">{{ source.name }}</p>
+            {% if source.description and source.description !== "" %}
+                <p>{{ source.description }}</p>
+            {% endif %}
+            {% for resource in resources %}
+                {% if resource.type === "collection" %}
+                    {% for item in resource.collection %}
+                        {% if item.source === source.name %}
+                            <small>{{ item.name }}</small>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <br /><a href="{{ source.url }}" rel="nofollow noopener noreferrer">View Source</a>
+        </li>
+    {% endif %}
+{% endfor %}
