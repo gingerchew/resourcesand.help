@@ -85,10 +85,5 @@
                 "source":"CDC"
             }
         ]
-    },
-    {
-        "type":"notice",
-        "message": "These resources are offered at the suggestion of https://www.cdc.gov/mentalhealth/tools-resources/individuals/. More resources can be found there that cover finding treatment, elderly care, alzheimers, and veterans/active duty military.",
-        "size": 5
     }
 ]
