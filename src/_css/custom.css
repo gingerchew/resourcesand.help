@@ -3,27 +3,19 @@ html {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
-
-body {
-  min-height: 100vh;
-}
-
 blockquote {
   border-radius: 0.5em;
 }
-
 html,
 body {
   height: 100%;
   min-height: 100vh;
   font-size: 16px;
 }
-
 body {
   display: flex;
   flex-flow: column;
 }
-
 body > main {
   flex: 1;
 }
@@ -36,20 +28,18 @@ body > main {
     padding-right: .75rem;
   }
 }
-
-speedlify-score {
-  padding: 0.5ch 0.65ch;
-  background-color: white;
-  border-radius: calc(1em * 1000000);
+speedlify-score:not([data-timestamp]) {
+  opacity: 0;
 }
-
+speedlify-score {
+  transition: opacity 0.5s ease;
+}
 .btn-link {
   background-color: transparent;
   border-color: transparent;
   font-size: 1.25rem;
   color: white;
 }
-
 .btn-link:hover {
   text-decoration: underline;
 }
@@ -78,13 +68,6 @@ speedlify-score {
 .navigation-item {
   text-transform: uppercase;
   font-size: 14px;
-}
-
-
-/* Tarjetas */
-.tarjeta:hover {
-  transition: all 1s;
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
 }
 
 /* Post and Article Content*/
