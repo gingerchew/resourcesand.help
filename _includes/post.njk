@@ -11,10 +11,6 @@ featuredImage: /_images/default.jpg
 
     <main class="section is-flex-grow-1">
 
-      <div class="container">
-        {% topPostAd %}
-      </div>
-
       <article class="container articulo">
         <header class=" container has-text-centered">
           {% if config.showDate %}
@@ -34,9 +30,6 @@ featuredImage: /_images/default.jpg
             <img src="{{featuredImage}}" alt="{{title}}" class="image is-fullwidth">
           </figure>
         {% endif %}
-
-        {% bottomImagePostAd %}
-
         <div class="is-flex">
 
           <div class="articulo-content content mb-0">
@@ -51,14 +44,12 @@ featuredImage: /_images/default.jpg
 
         </div>
 
-        {% bottomContentPostAd %}
-
       </article>
     </main>
 
-    {% if config.showRelatedPosts %}
+    {# if config.showRelatedPosts %}
       {% include "related-posts.njk" %}
-    {% endif %}
+    {% endif #}
 
 
     {% include "footer.njk" %}

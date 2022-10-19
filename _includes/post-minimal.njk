@@ -6,14 +6,12 @@
     <main class="container">
     <section class="section is-flex-grow-1">
 
-       {% topPostMinimalAd %}
-
       <div class="container articulo content">
         <div class="columns is-centered">
           <div class="column is-8">
           {{ content | safe }}
           <span>Web Performance Scores</span>
-          {% set urlWithOrigin %}{{ config.domain }}/{% endset %}
+          {% set urlWithOrigin %}https://{{ config.domain }}/{% endset %}
           {% if speedlify[urlWithOrigin] and speedlify[urlWithOrigin].hash %}
           <speedlify-score speedlify-url="https://speedlichew.netlify.app/" hash="{{ speedlify[urlWithOrigin].hash }}"></speedlify-score>
           {% else %}
