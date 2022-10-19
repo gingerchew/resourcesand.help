@@ -1,7 +1,7 @@
 {
-  "name": "eleventy",
+  "name": "resourcesand.help",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of resources made to be shared easily for content creators and streamers.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
