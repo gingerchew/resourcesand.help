@@ -15,7 +15,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
-    "eleventy-plugin-target-safe": "^0.5.3"
+    "eleventy-plugin-target-safe": "^0.5.4"
   },
   "dependencies": {
     "@11ty/eleventy-cache-assets": "^2.3.0",

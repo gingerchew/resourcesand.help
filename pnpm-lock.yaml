@@ -6,7 +6,7 @@ specifiers:
   '@11ty/eleventy-plugin-inclusive-language': ^1.0.3
   clean-css: ^5.1.2
   eleventy-plugin-purgecss: ^0.3.0
-  eleventy-plugin-target-safe: ^0.5.3
+  eleventy-plugin-target-safe: ^0.5.4
   html-minifier: ^4.0.0
   speedlify-score: ^2.0.2
   terser: ^5.7.0
@@ -22,7 +22,7 @@ dependencies:
 devDependencies:
   '@11ty/eleventy': 1.0.2
   '@11ty/eleventy-plugin-inclusive-language': 1.0.3
-  eleventy-plugin-target-safe: 0.5.3
+  eleventy-plugin-target-safe: 0.5.4
 
 packages:
 
@@ -863,8 +863,8 @@ packages:
       purgecss: 5.0.0
     dev: false
 
-  /eleventy-plugin-target-safe/0.5.3:
-    resolution: {integrity: sha512-krlIPCStQH+dDSOvXHyu1MTiv+WHKqpiN5dCgYDkrYhLobf0CR5gBTnaL4zpiQABe++Blj7Hv9hkrEThihbHGg==}
+  /eleventy-plugin-target-safe/0.5.4:
+    resolution: {integrity: sha512-fEM+t1zPAZZUr/nWSNptdWYJu9Z57QX45YsfoHhIsGHrLxbFRHX3GmaSnVcdNNZQEgWDx9QTFw5tVkaAyn4IrA==}
     dependencies:
       jsdom: 20.0.1
     transitivePeerDependencies:
