@@ -1,6 +1,3 @@
-{% set rel %}
-rel="noreferrer nofollow noopener"
-{% endset %}
 <div class="column is-12">
   <details>
     <summary class="title is-size-4 is-size-3-desktop">{{ resource.name }} - {{ resource.collection | length }}</summary>
@@ -9,8 +6,8 @@ rel="noreferrer nofollow noopener"
 
         <li>
             <span class="subtitle is-5">{{ item.name }}</span>
-            {% if item.url %}<br/><a href="{{ item.url }}" {{ rel }}>Website</a>{% endif %}
-            {% if item.chat %} - <a href="{{ item.chat }}" {{ rel }}>Chat Online</a>{% endif %}
+            {% if item.url %}<br/><a href="{{ item.url }}" target="_blank">Website</a>{% endif %}
+            {% if item.chat %} - <a href="{{ item.chat }}" target="_blank">Chat Online</a>{% endif %}
             {% if item.tel %}
                 <br />
                 <span>Phone: {{ item.tel }}</span>
