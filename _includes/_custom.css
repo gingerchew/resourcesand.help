@@ -12,6 +12,7 @@ html {
     min-height: 100vh;
     font-size: 16px;
   }
+  
   body {
     display: flex;
     flex-flow: column;
@@ -121,3 +122,10 @@ html {
   .source small:not(:last-of-type)::after {
     content: ', '
   }
+  
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+}
