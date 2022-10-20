@@ -1,4 +1,5 @@
 const eleventyPluginTargetSafe = require('eleventy-plugin-target-safe');
+const eleventyFavicon = require('eleventy-favicon');
 
 module.exports = function (eleventyConfig) {
     /* --- Social Icons --- */
@@ -41,6 +42,8 @@ module.exports = function (eleventyConfig) {
     const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language');
 
     eleventyConfig.addPlugin(inclusiveLangPlugin);
+    eleventyConfig.addPlugin(eleventyPluginTargetSafe)
+    eleventyConfig.addPlugin(eleventyFavicon);
 
     // Clean-css
     const CleanCSS = require("clean-css");
@@ -92,8 +95,6 @@ module.exports = function (eleventyConfig) {
             return content;
         });
     }
-
-    eleventyConfig.addPlugin(eleventyPluginTargetSafe)
 
     // Estructura de directorios
     return {
