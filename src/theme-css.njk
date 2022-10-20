@@ -5,6 +5,6 @@ eleventyExcludeFromCollections: true
 {% set css %}
   {% include "./_css/speedlify.css" %}
   {% include "./_css/bulma.css" %}
-  {% include "./_css/custom.css" %}
+  {% include "_custom.css" %}
 {% endset %}
 {{ css | cssmin | safe }}
