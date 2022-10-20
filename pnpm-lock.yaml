@@ -6,6 +6,7 @@ specifiers:
   '@11ty/eleventy-plugin-inclusive-language': ^1.0.3
   clean-css: ^5.1.2
   eleventy-plugin-purgecss: ^0.3.0
+  eleventy-plugin-target-safe: ^0.5.2
   html-minifier: ^4.0.0
   speedlify-score: ^2.0.2
   terser: ^5.7.0
@@ -21,6 +22,7 @@ dependencies:
 devDependencies:
   '@11ty/eleventy': 1.0.2
   '@11ty/eleventy-plugin-inclusive-language': 1.0.3
+  eleventy-plugin-target-safe: 0.5.2
 
 packages:
 
@@ -776,6 +778,10 @@ packages:
     dependencies:
       purgecss: 5.0.0
     dev: false
+
+  /eleventy-plugin-target-safe/0.5.2:
+    resolution: {integrity: sha512-AS2/XHYOOTSFM/5h4sflmrghOJtXyjByX7XTqbUTj/1sSKK191L8f0rN+4dhzAvCg4ktq4M05lH93iLnZhkT6A==}
+    dev: true
 
   /emoji-regex/8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
