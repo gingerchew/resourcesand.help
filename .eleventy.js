@@ -96,6 +96,8 @@ module.exports = function (eleventyConfig) {
         });
     }
 
+    eleventyConfig.addPassthroughCopy('src/_images')
+
     // Estructura de directorios
     return {
         dir: {
