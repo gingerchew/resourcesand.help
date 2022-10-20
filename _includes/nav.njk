@@ -1,13 +1,13 @@
 <nav id="main-navbar" class="navbar is-spaced has-shadow" role="navigation" aria-label="main navigation">
   <div class="container section-padding">
   
-    <div class="navbar-brand">
+    <div class="navbar-brand is-flex-grow-1">
       <a role="button" class="navbar-burger ml-0" aria-label="menu" aria-expanded="false" data-target="mobile-navbar">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
-      <a class="navbar-item subtitle is-5 has-text-weight-bold" href="{{ config.url }}">
+      <a class="navbar-item subtitle is-5 is-flex-grow-1 has-text-weight-bold" href="{{ config.url }}">
           {#
         {% if config.logoUrl.length > 0 %}
             Si logo desde fichero: <img src="{{ config.logoUrl }}" alt="{{ config.title }}"/>
@@ -16,7 +16,8 @@
         {% else %}
         {% endif %}
           #}
-        {{ config.title }}
+        <img src="{{ config.logoUrl | url }}" alt="{{ config.title }}"/>
+        <span class="pl-2">{{ config.title }}</span>
       </a>
       {#
       <a id="share-mobile" href="#" class="navbar-item is-hidden-desktop ml-auto mr-2" aria-label="share button for mobile">
