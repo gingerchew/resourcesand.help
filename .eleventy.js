@@ -1,3 +1,5 @@
+const eleventyPluginTargetSafe = require('eleventy-plugin-target-safe');
+
 module.exports = function (eleventyConfig) {
     /* --- Social Icons --- */
     eleventyConfig.addNunjucksShortcode("facebookDarkIcon", function() {
@@ -77,9 +79,9 @@ module.exports = function (eleventyConfig) {
     const htmlmin = require("html-minifier");
 
     if (process.env.ELEVENTY_ENV === "production") {
-        eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+        eleventyConfig.addTransform("htmlmin", function (content) {
             // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-            if (outputPath && outputPath.endsWith(".html")) {
+            if (this.outputPath && this.outputPath.endsWith(".html")) {
                 let minified = htmlmin.minify(content, {
                     useShortDoctype: true,
                     removeComments: true,
@@ -90,6 +92,8 @@ module.exports = function (eleventyConfig) {
             return content;
         });
     }
+
+    eleventyConfig.addPlugin(eleventyPluginTargetSafe)
 
     // Estructura de directorios
     return {
