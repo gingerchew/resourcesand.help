@@ -5,22 +5,19 @@ description: A collection of resources for LGBTQ+, Domestic Abuse, and Crisis an
 eleventyExcludeFromCollections: true
 ---
 
-<section class="section is-flex-grow-1">
-  <div class="container">
-
-    <div class="columns is-variable is-5-desktop is-multiline is-mobile">
-      {% for resource in resources %}
-        {% if resource.type == "notice" %}
-          {% include "resource-notice.njk" %}
-        {% elif resource.type == "collection" %}
-          {% include "resource-collection.njk" %}
-        {% endif %}
-      {% endfor %}
-      <div class="is-12 column">
-        <blockquote class="p-3 has-background-info-light">
-          <p class="title has-text-link-dark is-5">A list of all the sources used can be found at <a href="/sources/">here.</a></p>
-        </blockquote>
-      </div>
+<section class="section">
+  <div class="columns is-multiline is-mobile">
+    {% for resource in resources %}
+      {% if resource.type == "notice" %}
+        {% include "resource-notice.njk" %}
+      {% elif resource.type == "collection" %}
+        {% include "resource-collection.njk" %}
+      {% endif %}
+    {% endfor %}
+    <div class="is-12 column">
+      <blockquote class="p-3 has-background-info-light">
+        <p class="title has-text-link-dark is-5">A list of all the sources used can be found at <a href="/sources/">here.</a></p>
+      </blockquote>
     </div>
   </div>
 </section>
