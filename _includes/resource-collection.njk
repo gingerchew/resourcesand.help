@@ -1,13 +1,13 @@
 <div class="column is-12">
   <details>
     <summary class="title is-size-4 is-size-3-desktop">{{ resource.name }} - {{ resource.collection | length }}</summary>
-    <ul>
+    <ul class="columns align-items-stretch is-multiline">
     {% for item in resource.collection %}
 
-        <li>
-            <span class="subtitle is-5">{{ item.name }}</span>
-            {% if item.url %}<br/><a href="{{ item.url }}" target="_blank">Website</a>{% endif %}
-            {% if item.chat %} - <a href="{{ item.chat }}" target="_blank">Chat Online</a>{% endif %}
+        <li class="column is-4-desktop is-12 is-flex is-flex-direction-column">
+            <span class="subtitle is-5 is-flex-grow-1">{{ item.name }}</span>
+            <span>{% if item.url %}<a href="{{ item.url }}" target="_blank">Website</a>{% endif %}
+            {% if item.chat %} - <a href="{{ item.chat }}" target="_blank">Chat Online</a>{% endif %}</span>
             {% if item.tel %}
                 <br />
                 <span>Phone: {{ item.tel }}</span>
