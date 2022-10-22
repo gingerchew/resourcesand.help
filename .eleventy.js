@@ -1,5 +1,7 @@
 const eleventyPluginTargetSafe = require('eleventy-plugin-target-safe');
 const eleventyFavicon = require('eleventy-favicon');
+const GetSVGContents = require('./node_modules/eleventy-plugin-svg-contents/src/getSvgContents.js');
+
 
 module.exports = function (eleventyConfig) {
     /* --- Social Icons --- */
@@ -38,12 +40,19 @@ module.exports = function (eleventyConfig) {
     })
     /* --- Social Icons --- */
 
-
+    
+    
     const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language');
-
+    
     eleventyConfig.addPlugin(inclusiveLangPlugin);
     eleventyConfig.addPlugin(eleventyPluginTargetSafe)
     eleventyConfig.addPlugin(eleventyFavicon);
+    eleventyConfig.addFilter('svgContents', (file, className, extractTag = 'svg') => {
+        console.log(file);
+        const getSVGContents = new GetSVGContents(file, className, extractTag);
+    
+        return getSVGContents.getSvg();
+      });
 
     // Clean-css
     const CleanCSS = require("clean-css");
