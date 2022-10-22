@@ -6,8 +6,8 @@
         <li class="column is-4-desktop is-12">
             <div class="p-4 is-flex is-flex-direction-column h-100">
                 <span class="subtitle is-5 is-flex-grow-1">{{ item.name }}</span>
-                <span>{% if item.url %}<a href="{{ item.url }}" target="_blank">Website</a>{% endif %}
-                {% if item.chat %} - <a href="{{ item.chat }}" target="_blank">Chat Online</a>{% endif %}</span>
+                <span>{% if item.url %}<a href="{{ item.url }}" target="_blank"><span class="visually-hidden">Visit the {{ item.name }} </span>Website</a>{% endif %}
+                {% if item.chat %} - <a href="{{ item.chat }}" target="_blank"><span class="visually-hidden">Access the {{ item.name }} </span>Chat Online</a>{% endif %}</span>
                 {% if item.tel %}
                     <br />
                     <span>Phone: {{ item.tel }}</span>
