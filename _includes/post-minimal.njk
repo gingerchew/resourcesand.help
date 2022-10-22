@@ -11,7 +11,6 @@
           <div class="column is-8">
           {{ content | safe }}
           {% include "credits.njk" %}
-          <span>Web Performance Scores</span>
           {% set urlWithOrigin %}https://{{ config.domain }}/{% endset %}
           {% if speedlify[urlWithOrigin] and speedlify[urlWithOrigin].hash %}
           <speedlify-score speedlify-url="https://speedlichew.netlify.app/" hash="{{ speedlify[urlWithOrigin].hash }}"></speedlify-score>
