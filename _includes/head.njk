@@ -9,7 +9,7 @@
     <meta name="generator" content="{{ eleventy.generator }}" />
     {% favicon './src/_images/guide-dog.svg' %}
 
-    <link rel="preload" href="{{ '/theme.css' | url }}" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="{{ '/theme.css' | url }}" onload="this.onload=null;this.rel='stylesheet'" />
 
     {% if layout === 'post.njk' or layout === 'post-minimal.njk' %}
       <meta property="og:site_name" content="{{config.title}}" />
