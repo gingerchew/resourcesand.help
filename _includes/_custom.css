@@ -39,7 +39,9 @@ a,
     padding-right: .75rem;
   }
 }
-
+details:not([open]) ul {
+  content-visibility: hidden;
+}
 speedlify-score:not([data-timestamp]) {
   opacity: 0;
 }
