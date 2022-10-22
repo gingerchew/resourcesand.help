@@ -1,35 +1,30 @@
-((doc, resourceForm, resourceUpdate, aEL, clk) => {
-	let getById = doc.getElementById,
-	dialogOpen = false,
+((resourceForm, resourceUpdate) => {
+	let dialogOpen = false,
 	closeModal = ({ target }) => {
 		if (target === resourceForm) {
 			resourceForm.close();
 			dialogOpen = false;
-			doc.removeEventListener(clk, closeModal, true);
+			document.removeEventListener("click", closeModal, true);
 		}
 	},
-	closeAll = (el,details) => details.forEach($el => $el !== el && $el.removeAttribute('open'));
+	closeAll = (el,details) => details.forEach($el => $el !== el && $el.removeAttribute('open')),
+	burger = document.querySelector(".navbar-burger");
 	
 	// Navbar
-	doc[aEL]("DOMContentLoaded", () => doc.querySelectorAll(".navbar-burger")
-		.forEach((el) => el[aEL](clk, () => {
-				const target = el.dataset.target;
-				const $target = getById(target);
-				el.classList.toggle("is-active");
-				$target.classList.toggle("is-active");
-			})
-		)
-	);
-	resourceUpdate[aEL](clk, () => {
+	burger.addEventListener('click', () => {
+		burger.classList.toggle("is-active");
+		document.getElementById(burger.dataset.target).classList.toggle("is-active");
+	})
+	resourceUpdate.addEventListener("click", () => {
 		if (dialogOpen) {
 			resourceForm.close();
 			dialogOpen = false
 		} else {
 			resourceForm.showModal();
-			doc[aEL](clk, closeModal, true);
+			document.addEventListener('click', closeModal, true);
 			dialogOpen = true;
 		}
 	});
 	
-	doc.querySelectorAll('details').forEach((el,i,t) => el[aEL]('toggle', ({target:e}) => e.hasAttribute('open') && closeAll(e,t)));
-})(document, document.getElementById('resourceUpdate'), document.getElementById('resourceForm'), 'addEventListener', 'click');
+	document.querySelectorAll('details').forEach((el,i,t) => el.addEventListener('toggle', ({target:e}) => e.hasAttribute('open') && closeAll(e,t)));
+})(document.getElementById('resourceUpdate'), document.getElementById('resourceForm'));
