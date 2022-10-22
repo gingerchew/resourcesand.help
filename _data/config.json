@@ -3,7 +3,7 @@
   "url": "/",
   "domain": "resourcesand.help",
   "language": "en",
-  "logoUrl": "/_images/guide-dog.svg",
+  "logoUrl": "/src/_images/guide-dog.svg",
   "search": false,
   "showCookiesAdvice": false,
   "cookiesAdviceText": "Cookies advice text",
