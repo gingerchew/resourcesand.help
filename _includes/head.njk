@@ -9,7 +9,7 @@
     <meta name="generator" content="{{ eleventy.generator }}" />
     {% favicon './src/_images/guide-dog.svg' %}
 
-    <link rel="stylesheet" href="{{ '/theme.css' | url }}">
+    <link rel="stylesheet" href="{{ '/theme.css' | url }}" onload="this.onload=null;this.media='all'" media="print" />
 
     {% if layout === 'post.njk' or layout === 'post-minimal.njk' %}
       <meta property="og:site_name" content="{{config.title}}" />
@@ -30,11 +30,4 @@
       {% endif %}
 
     {% endif %}
-    
-    {% set js %}
-      {% include "scripts.js" %}
-    {% endset %}
-    <script type="module">
-      {{ js | jsmin | safe }}
-    </script>
   </head>

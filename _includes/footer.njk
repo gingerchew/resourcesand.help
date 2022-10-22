@@ -75,3 +75,10 @@
     </div>
   </form>
 </dialog>
+
+{% set js %}
+  {% include "scripts.js" %}
+{% endset %}
+<script type="module" async>
+  {{ js | jsmin | safe }}
+</script>
