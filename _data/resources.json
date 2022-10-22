@@ -1,10 +1,5 @@
 [
     {
-        "type":"notice",
-        "message":"If you are in crisis, call 911 or the emergency services number for your country immediately",
-        "size":3
-    },
-    {
         "type":"collection",
         "name":"Crisis and Suicide Prevention",
         "collection":[
@@ -67,7 +62,7 @@
     },
     {
         "type":"collection",
-        "name":"LGBTQ+",
+        "name":"LGBTQIA+",
         "collection": [
             {
                 "type":"resource",
