@@ -180,3 +180,13 @@ a[target="_blank"]::after {
 .navbar-burger span {
   transition: unset;
 }
+
+.logo {
+  max-width: 36px;
+  max-height: 36px;
+}
+
+.logo > svg {
+  width: 100%;
+  height: 100%;
+}
