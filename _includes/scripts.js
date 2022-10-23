@@ -27,4 +27,4 @@
 	});
 	
 	document.querySelectorAll('details').forEach((el,i,t) => el.addEventListener('toggle', ({target:e}) => e.hasAttribute('open') && closeAll(e,t)));
-})(document.getElementById('resourceUpdate'), document.getElementById('resourceForm'));
+})(document.getElementById('resourceForm'), document.getElementById('resourceUpdate'));
