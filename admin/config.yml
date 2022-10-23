@@ -1,6 +1,6 @@
 --- 
 backend: 
-  branch: netlify-cms
+  branch: main
   name: git-gateway
 collections: 
   - 
