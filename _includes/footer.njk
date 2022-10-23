@@ -49,21 +49,28 @@
         </p>
       </div>
       <div class="column is-7 field">
-        <label class="label">Which resource needs to be updated?</label>
+        <label class="label">Give us the name of the resource, for example The Trevor Project.</label>
         <div class="control">
-          <input name="name" type="text" class="input" />
+          <input name="name" type="text" class="input" required />
         </div>
       </div>
       <div class="column is-7 field">
-        <label class="label">What is the update?</label>
+        <label class="label">Enter all relevant information.
+          <ul>
+            <li><small>If the resource is limited to a specific region, county, prefecture, city, please make a note of that.</small></li>
+            <li><small>If any contact number is international, please tell us the country. We also request you include the country code, E.g. US country code is +1, while Finland is +358. For example, US numbers are formatted as 1-xxx-xxx-xxxx.</small></li>
+          </ul>
+        </label>
         <div class="control">
-          <textarea name="what" class="textarea"></textarea>
+          <textarea name="what" class="textarea" required></textarea>
         </div>
       </div>
       <div class="column is-7 field">
-        <label class="label">Please add your source!</label>
+        <label class="label">
+          Please add the source! <small>These need to be official resources. We will only accept resources from certified organizations, government organizations, or nonprofits with a history of direct action and support. We reserve the right to reject a resource without further inquiry.</small>
+        </label>
         <div class="control">
-          <input name="source" type="text" class="input" />
+          <input name="source" type="text" class="input" required />
         </div>
       </div>
       <div class="column is-5 field">
