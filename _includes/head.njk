@@ -8,7 +8,10 @@
     <meta name="description" content="{{ description or site.description }}" />
     <meta name="generator" content="{{ eleventy.generator }}" />
     {% favicon './src/_images/guide-dog.svg' %}
-
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
     <link rel="preload" as="style" href="{{ '/theme.css' | url }}" onload="this.onload=null;this.rel='stylesheet'" />
 
     {% if layout === 'post.njk' or layout === 'post-minimal.njk' %}
