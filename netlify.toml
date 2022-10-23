@@ -1,2 +1,7 @@
 [build.environment]
     ELEVENTY_ENV = "production"
+[[redirects]]
+    from = "resourcesandhelp.netlify.app"
+    to = "resourcesand.help"
+    status = "301"
+    force = "false"
