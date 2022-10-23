@@ -9,22 +9,23 @@
                 <span>{% if item.url %}<a href="{{ item.url }}" target="_blank"><span class="visually-hidden">Visit the {{ item.name }} </span>Website</a>{% endif %}
                 {% if item.chat %} - <a href="{{ item.chat }}" target="_blank"><span class="visually-hidden">Access the {{ item.name }} </span>Chat Online</a>{% endif %}</span>
                 {% if item.tel %}
-                    <br />
-                    <span>Phone: {{ item.tel }}</span>
+                    <span class="is-flex is-align-items-center gap-1 pt-1 has-background-white">
+                        <span class="icon">{{ "/src/_images/phone-icon.svg" | svgContents | safe }}</span>
+                        Phone: <b>{{ item.tel }}</b>
+                    </span>
                 {% endif %}
                 {% if item.sms %}
-                    <br />
-                    <span>Text: {{ item.sms }}</span>
+                    <span class="is-flex is-align-items-center gap-1 pt-1">
+                        <span class="icon">{{ "/src/_images/text-bubble.svg" | svgContents | safe }}</span>
+                        Text: <b>{{ item.sms }}</b>
+                    </span>
                 {% endif %}
                 {% if item.instructions %}
-                    <br />
-                    <span>{{ item.instructions | replace('{sms}', item.sms)  }}</span>
+                    <span class="pt-1">{{ item.instructions | replace('{sms}', item.sms)  }}</span>
                 {% endif %}
                 {% if item.language %}
-                    <br />
-                    <span>{{ item.language }}</span>
+                    <span class="pt-1">{{ item.language }}</span>
                 {% endif %}
-
                 <hr />
             </div>
         </li>
