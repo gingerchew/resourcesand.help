@@ -42,13 +42,11 @@ a,
 details:not([open]) ul {
   content-visibility: hidden;
 }
-speedlify-score:not([data-timestamp]) {
-  opacity: 0;
+
+.tilt {
+  font-family: "Caveat",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-speedlify-score {
-  transition: opacity 0.5s ease;
-}
 
 .btn-link {
   background-color: transparent;
@@ -115,6 +113,9 @@ a[target="_blank"]::after {
   content: '\21D7';
   display: inline-block;
 }
+.footer-social-icons [target="_blank"]::after {
+  content: unset;
+}
 .h-100 {
   height: 100% !important;
 }
@@ -125,7 +126,21 @@ a[target="_blank"]::after {
 .resource-collection {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+  background-color: #fff;
 }
+
+.gap-1 {
+  gap: 0.25rem !important
+}
+
+.gap-2 {
+  gap: 0.5rem !important
+}
+
+.gap-3 {
+  gap: 1rem !important;
+}
+
 
 /* Search */
 #search-results {
