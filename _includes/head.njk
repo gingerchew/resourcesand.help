@@ -11,8 +11,13 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
-    <link rel="preload" as="style" href="{{ '/theme.css' | url }}" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" onload="this.onload=null;this.rel='stylesheet';" > 
+    <link rel="stylesheet" href="{{ '/theme.css' | url }}" onload="this.onload=null;this.media='all'" media="print" />
+
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" /> 
+      <link rel="stylesheet" href="{{ '/theme.css' | url }}" />
+    </noscript>
 
     {% if layout === 'post.njk' or layout === 'post-minimal.njk' %}
       <meta property="og:site_name" content="{{config.title}}" />
