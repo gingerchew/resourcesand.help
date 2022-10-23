@@ -4,107 +4,108 @@ backend:
   name: git-gateway
 publish_mode: editorial_workflow
 collections: 
-  - 
-    create: true
-    extension: json
-    fields: 
-      - 
-        default: resource
-        label: Type
-        name: type
-        widget: string
-      - 
-        label: Name
-        name: name
-        widget: string
-      - 
-        label: "Telephone Number"
-        name: tel
-        widget: string
-      - 
-        label: "Text Number"
-        name: sms
-        widget: string
-      - 
-        label: "Website URL"
-        name: url
-        widget: string
-      - 
-        label: "Chat Website URL"
-        name: chat
-        widget: string
-      - 
-        label: Instructions
-        name: instructions
-        widget: text
-      - 
-        label: "Language e.g. Press 3 for Spanish"
-        name: language
-        widget: string
-      - 
-        collection: sources
-        label: Source
-        name: source
-        search_fields: 
-          - name
-        value_field: name
-        widget: relation
-      - 
-        collection: collections
-        label: "Collection e.g. LGBTQIA+ or Domestic Abuse or Suicide Prevention"
-        name: collection
-        search_fields: 
-          - name
-          - id
-        value_field: name
-        widget: relation
-    files: _data/_resources.json
-    label: Resources
+  - label: Resources
     name: resources
-    slug: "resource-{{slug}}"
-  - 
-    create: true
-    extension: json
-    fields: 
+    files: 
+      - extension: json
+        fields: 
+          - 
+            default: resource
+            label: Type
+            name: type
+            widget: string
+          - 
+            label: Name
+            name: name
+            widget: string
+          - 
+            label: "Telephone Number"
+            name: tel
+            widget: string
+          - 
+            label: "Text Number"
+            name: sms
+            widget: string
+          - 
+            label: "Website URL"
+            name: url
+            widget: string
+          - 
+            label: "Chat Website URL"
+            name: chat
+            widget: string
+          - 
+            label: Instructions
+            name: instructions
+            widget: text
+          - 
+            label: "Language e.g. Press 3 for Spanish"
+            name: language
+            widget: string
+          - 
+            collection: sources
+            label: Source
+            name: source
+            search_fields: 
+              - name
+            value_field: name
+            widget: relation
+          - 
+            collection: collections
+            label: "Collection e.g. LGBTQIA+ or Domestic Abuse or Suicide Prevention"
+            name: collection
+            search_fields: 
+              - name
+              - id
+            value_field: name
+            widget: relation
+        file: _data/_resources.json
+        label: Resources
+        name: resources
+        slug: "resource-{{slug}}"
       - 
-        label: Name
-        name: name
-        widget: string
+        create: true
+        extension: json
+        fields: 
+          - 
+            label: Name
+            name: name
+            widget: string
+          - 
+            default: false
+            label: "Show on Website?"
+            name: active
+            widget: boolean
+          - 
+            label: "Description (Optional)"
+            name: description
+            widget: text
+          - 
+            label: "Website URL"
+            name: url
+            widget: text
+        files: _data/_sources.json
+        label: Sources
+        name: sources
+        slug: "source-{{slug}}"
       - 
-        default: false
-        label: "Show on Website?"
-        name: active
-        widget: boolean
-      - 
-        label: "Description (Optional)"
-        name: description
-        widget: text
-      - 
-        label: "Website URL"
-        name: url
-        widget: text
-    files: _data/_sources.json
-    label: Sources
-    name: sources
-    slug: "source-{{slug}}"
-  - 
-    create: true
-    extension: json
-    fields: 
-      - 
-        label: Name
-        name: name
-        widget: string
-      - 
-        label: Description
-        name: description
-        widget: text
-      - 
-        label: "ID e.g. LGBTQIA could have \"queer\" or \"gay\" to make it easier to assign resources to this collection."
-        name: id
-        widget: string
-    files: _data/_collections.json
-    label: Collections
-    name: collections
-    slug: "collection-{{id}}"
+        create: true
+        extension: json
+        fields: 
+          - 
+            label: Name
+            name: name
+            widget: string
+          - 
+            label: Description
+            name: description
+            widget: text
+          - 
+            label: "ID e.g. LGBTQIA could have \"queer\" or \"gay\" to make it easier to assign resources to this collection."
+            name: id
+            widget: string
+        files: _data/_collections.json
+        label: Collections
+        name: collections
+        slug: "collection-{{id}}"
 media_folder: _site/_images
