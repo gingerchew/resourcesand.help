@@ -148,6 +148,19 @@ a[target="_blank"]::after {
   overflow-y: scroll;
 }
 
+.icon > svg {
+  width: 100%;
+  max-width: 100%;
+}
+
+.notice {
+  max-width: 100%;
+}
+@media (max-width: 576px) {
+  .mb-mobile-0 {
+    margin-bottom: 0;
+  }
+}
 /* Footer */
 .footer-social-icons span,
 .share-buttons a {
