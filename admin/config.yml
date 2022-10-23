@@ -9,11 +9,6 @@ collections:
     extension: json
     fields: 
       - 
-        default: resource
-        label: Type
-        name: type
-        widget: string
-      - 
         label: Name
         name: name
         widget: string
@@ -25,22 +20,27 @@ collections:
         label: "Text Number"
         name: sms
         widget: string
+        required: false
       - 
         label: "Website URL"
         name: url
         widget: string
+        required: false
       - 
         label: "Chat Website URL"
         name: chat
         widget: string
+        required: false
       - 
         label: Instructions
         name: instructions
         widget: text
+        required: false
       - 
         label: "Language e.g. Press 3 for Spanish"
         name: language
         widget: string
+        required: false
       - 
         collection: sources
         label: Source
@@ -61,7 +61,7 @@ collections:
     folder: _data/resources
     label: Resources
     name: resources
-    slug: "resource-{{slug}}"
+    slug: "resource-{{name}}"
   - 
     create: true
     extension: json
@@ -79,6 +79,7 @@ collections:
         label: "Description (Optional)"
         name: description
         widget: text
+        required: false
       - 
         label: "Website URL"
         name: url
@@ -86,7 +87,7 @@ collections:
     folder: _data/sources
     label: Sources
     name: sources
-    slug: "source-{{slug}}"
+    slug: "source-{{name}}"
   - 
     create: true
     extension: json
@@ -99,6 +100,7 @@ collections:
         label: Description
         name: description
         widget: text
+        required: false
       - 
         label: "ID e.g. LGBTQIA could have \"queer\" or \"gay\" to make it easier to assign resources to this collection."
         name: id
