@@ -68,7 +68,7 @@
                 "type":"resource",
                 "name":"Trans Lifeline",
                 "url":"https://translifeline.org/",
-                "tel":"18775658860",
+                "tel":"1-877-565-8860",
                 "instructions":"Press 2 for Spanish",
                 "source":"CDC"
             },
@@ -76,7 +76,7 @@
                 "type":"resource",
                 "name":"The Trevor Project's TrevorLifeline",
                 "url":"https://www.thetrevorproject.org/get-help/",
-                "tel":"18664887386",
+                "tel":"1-866-488-7386",
                 "source":"CDC"
             }
         ]
