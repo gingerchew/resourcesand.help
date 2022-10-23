@@ -106,7 +106,7 @@ module.exports = function (eleventyConfig) {
     }
 
     eleventyConfig.addPassthroughCopy('src/_images')
-
+    eleventyConfig.addPassthroughCopy('admin')
     // Estructura de directorios
     return {
         dir: {
