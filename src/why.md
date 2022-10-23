@@ -12,9 +12,31 @@ The inspiration for this site came from [this tweet](https://twitter.com/bbjessT
 
 No, this site is meant to be a reasonable collection of resources. Keeping it close in scope and only keeping resources related to Domestic Abuse, LGBTQ+, and Suicide Prevention. 
 
+## Do you accept Wikipedia as a source?
+
+No. Wikipedia is a great reference and has a lot of information, but it is not a source. The information that exists on Wikipedia is gotten from other websites, data, resources, papers, etc. If Wikipedia uses it as a source, than we are willing to take a look at it.
+
 ## One of the resources listed is out of date
 
-Please let us know! Click the button in the footer, fill out the form, and we'll review it as soon as possible.
+Please let us know! Click the link in the footer, fill out the form, and we'll review it as soon as possible.
+
+## I'm a developer and I want to help
+
+That is great to hear! We host the code at [Github](https://github.com/gingerchew/resourcesand.help), and list ideas or ways others can help there periodically. This project is still small, for example the `.json` files that our data is sourced from are still edited manually.
+
+Please check out the repo, read our contributing guide, and any issues that you think you can contribute to, be it data entry, suggestions for new features, anything, please let us know. 
+
+## I'm an a11y specialist/advocate and I found an issue
+
+Please let us know immediately! As we mentioned above, our code is hosted at [GitHub](https://github.com/gingerchew/resourcesand.help), so any issues with accessibility should be added. We currently run the website through the [axe Dev Tools](https://www.deque.com/axe/devtools/) provided by [deque](https://www.deque.com/). Our goal is to always maintain AAA WCAG a11y compliance, and if we are not meeting that standard please let us know.
+
+## I speak another language and would like to provide translations
+
+I love to hear it! Currently this is the biggest addition to the site that we would like to add, but it is also the most costly. Good translation services, even from volunteers, and the infrastructure/work to maintain them is costly. From both a monetary and time perspective. Since that is the case, we cannot in good conscious ask that people wildly donate their time or expertise without compensation. 
+
+That being said, if you are truly able to volunteer your time to help with translating, please click the link in the footer and fill out the form. Let us know your name and email, and the languages you would like to help with. For the sources field, you can either add credentials, or just put a smiley face :)
+
+We will reach out to you and try to get you set up to contribute in a way that is easy for everyone involved.
 
 ## How do I set up a chat command for my channel?
 
