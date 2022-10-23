@@ -102,5 +102,5 @@ collections:
     folder: _data/collections
     label: Collections
     name: collections
-    slug: collection-slug
+    slug: "collection-{{slug}}"
 media_folder: _site/_images
