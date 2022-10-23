@@ -1,0 +1,106 @@
+--- 
+backend: 
+  branch: netlify-cms
+  name: git-gateway
+collections: 
+  - 
+    create: true
+    fields: 
+      - 
+        default: resource
+        label: Type
+        name: type
+        widget: string
+      - 
+        label: Name
+        name: name
+        widget: string
+      - 
+        label: "Telephone Number"
+        name: tel
+        widget: string
+      - 
+        label: "Text Number"
+        name: sms
+        widget: string
+      - 
+        label: "Website URL"
+        name: url
+        widget: string
+      - 
+        label: "Chat Website URL"
+        name: chat
+        widget: string
+      - 
+        label: Instructions
+        name: instructions
+        widget: text
+      - 
+        label: "Language e.g. Press 3 for Spanish"
+        name: language
+        widget: string
+      - 
+        collection: sources
+        label: Source
+        name: source
+        search_fields: 
+          - name
+        value_field: name
+        widget: relation
+      - 
+        collection: collections
+        label: "Collection e.g. LGBTQIA+ or Domestic Abuse or Suicide Prevention"
+        name: collection
+        search_fields: 
+          - name
+          - id
+        value_field: name
+        widget: relation
+    folder: _data/resources
+    label: Resources
+    name: resources
+    slug: "resource-{{slug}}"
+  - 
+    create: true
+    fields: 
+      - 
+        label: Name
+        name: name
+        widget: string
+      - 
+        default: false
+        label: "Show on Website?"
+        name: active
+        widget: boolean
+      - 
+        label: "Description (Optional)"
+        name: description
+        widget: text
+      - 
+        label: "Website URL"
+        name: url
+        widget: text
+    folder: _data/sources
+    label: Sources
+    name: sources
+    slug: "source-{{slug}}"
+  - 
+    create: true
+    fields: 
+      - 
+        label: Name
+        name: name
+        widget: string
+      - 
+        label: Description
+        name: description
+        widget: text
+      - 
+        label: "ID e.g. LGBTQIA could have \"queer\" or \"gay\" to make it easier to assign resources to this collection."
+        name: id
+        widget: string
+    folder: _data/collections
+    label: Collections
+    name: collections
+    slug: collection-slug
+media_folder: _site/_images
