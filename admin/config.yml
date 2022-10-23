@@ -58,7 +58,7 @@ collections:
           - id
         value_field: name
         widget: relation
-    folder: _data/resources
+    file: _data/_resources.json
     label: Resources
     name: resources
     slug: "resource-{{slug}}"
@@ -83,7 +83,7 @@ collections:
         label: "Website URL"
         name: url
         widget: text
-    folder: _data/sources
+    file: _data/_sources.json
     label: Sources
     name: sources
     slug: "source-{{slug}}"
@@ -103,7 +103,7 @@ collections:
         label: "ID e.g. LGBTQIA could have \"queer\" or \"gay\" to make it easier to assign resources to this collection."
         name: id
         widget: string
-    folder: _data/collections
+    file: _data/_collections.json
     label: Collections
     name: collections
     slug: "collection-{{id}}"
