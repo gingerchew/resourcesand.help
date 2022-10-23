@@ -6,6 +6,7 @@ publish_mode: editorial_workflow
 collections: 
   - 
     create: true
+    extension: json
     fields: 
       - 
         default: resource
@@ -63,6 +64,7 @@ collections:
     slug: "resource-{{slug}}"
   - 
     create: true
+    extension: json
     fields: 
       - 
         label: Name
@@ -87,6 +89,7 @@ collections:
     slug: "source-{{slug}}"
   - 
     create: true
+    extension: json
     fields: 
       - 
         label: Name
