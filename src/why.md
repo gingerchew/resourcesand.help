@@ -34,9 +34,9 @@ Please let us know immediately! As we mentioned above, our code is hosted at [Gi
 
 I love to hear it! Currently this is the biggest addition to the site that we would like to add, but it is also the most costly. Good translation services, even from volunteers, and the infrastructure/work to maintain them is costly. From both a monetary and time perspective. Since that is the case, we cannot in good conscious ask that people wildly donate their time or expertise without compensation. 
 
-That being said, if you are truly able to volunteer your time to help with translating, please click the link in the footer and fill out the form. Let us know your name and email, and the languages you would like to help with. For the sources field, you can either add credentials, or just put a smiley face :)
+That being said, if you are truly able to volunteer your time to help with translating, please click the link in the footer and fill out the form. Let us know your name and email, and the languages you would like to help with. For the sources field, you can either add credentials, or put a smiley face :)
 
-We will reach out to you and try to get you set up to contribute in a way that is easy for everyone involved.
+We will reach out to you and try to get you set up to contribute in a way that is reasonable for everyone involved.
 
 ## How do I set up a chat command for my channel?
 
