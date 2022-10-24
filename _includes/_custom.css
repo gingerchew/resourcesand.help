@@ -13,6 +13,7 @@ body {
   height: 100%;
   min-height: 100vh;
   font-size: 16px;
+  color: #020304
 }
 
 body {
@@ -23,7 +24,9 @@ body {
 body>main {
   flex: 1;
 }
-
+p {
+  font-weight: 500;
+}
 a,
 .btn-link {
   text-decoration: underline;
@@ -42,11 +45,16 @@ a,
 details:not([open]) ul {
   content-visibility: hidden;
 }
-
+.fw-500 {
+  font-weight: 500 !important;
+}
 .tilt {
   font-family: "Caveat",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-
+.subtitle {
+  color: #020304;
+  font-weight: 600;
+}
 
 .btn-link {
   background-color: transparent;
@@ -108,7 +116,9 @@ details:not([open]) ul {
     margin: 1rem -0.75rem !important;
   }
 }
-
+.articulo li {
+  font-weight: 500;
+}
 a[target="_blank"]::after {
   content: '\21D7';
   display: inline-block;
@@ -188,7 +198,9 @@ a[target="_blank"]::after {
 .social-flotante li a {
   margin: 5px 0;
 }
-
+.source small {
+  font-weight: 500;
+}
 .source small:first-of-type::before {
   content: 'Related Resources: ';
   font-weight: 700;
