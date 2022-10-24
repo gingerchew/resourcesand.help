@@ -1,7 +1,8 @@
 const eleventyPluginTargetSafe = require('eleventy-plugin-target-safe');
 const eleventyFavicon = require('eleventy-favicon');
 const GetSVGContents = require('./node_modules/eleventy-plugin-svg-contents/src/getSvgContents.js');
-
+const fs = require('fs');
+const path = require('path');
 
 module.exports = function (eleventyConfig) {
     /* --- Social Icons --- */
@@ -40,15 +41,45 @@ module.exports = function (eleventyConfig) {
     })
     /* --- Social Icons --- */
 
-    
-    
+    const readDir = async dir => {
+        dir = path.join(__dirname, dir);
+
+        return fs.readdirSync(dir).reduce((finalContent, file) => {
+            filePath = path.join(dir, file);
+            console.log(filePath);
+            let content = require(filePath);
+            finalContent.push(content);
+            return finalContent;
+        }, []);
+    }
+
+    /**
+     * @TODO Add the collections of folders that Netlify CMS generates to global 11ty data
+     * 
+     * Currently this isn't working, but I think it is possible some how. I just got too tired
+     * and frustrated to really finish taking a look at it.
+     * The `readDir` function is running without any errors though.
+     * 
+    eleventyConfig.addGlobalData("_collections", async () => {
+        await readDir('_data/collections').then(data => JSON.stringify(data));
+    });
+
+    eleventyConfig.addGlobalData("_sources", async () => {
+        await readDir('_data/sources').then(data=>JSON.stringify(data));
+    });
+
+    eleventyConfig.addGlobalData("_resources", async () => {
+        await readDir('_data/resources').then(data=>JSON.stringify(data));
+    });
+    */
+
+
     const inclusiveLangPlugin = require('@11ty/eleventy-plugin-inclusive-language');
     
     eleventyConfig.addPlugin(inclusiveLangPlugin);
     eleventyConfig.addPlugin(eleventyPluginTargetSafe)
     eleventyConfig.addPlugin(eleventyFavicon);
     eleventyConfig.addFilter('svgContents', (file, className, extractTag = 'svg') => {
-        console.log(file);
         const getSVGContents = new GetSVGContents(file, className, extractTag);
     
         return getSVGContents.getSvg();
