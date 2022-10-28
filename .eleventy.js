@@ -1,6 +1,7 @@
 const eleventyPluginTargetSafe = require('eleventy-plugin-target-safe');
 const eleventyFavicon = require('eleventy-favicon');
 const GetSVGContents = require('./node_modules/eleventy-plugin-svg-contents/src/getSvgContents.js');
+// const eleventyPostCSS = require('eleventy-plugin-postcss');
 const fs = require('fs');
 const path = require('path');
 
@@ -93,6 +94,7 @@ module.exports = function (eleventyConfig) {
 
     // PurgeCss
     const purgeCssPlugin = require("eleventy-plugin-purgecss");
+    
     if (process.env.ELEVENTY_ENV === "production") {
         eleventyConfig.addPlugin(purgeCssPlugin, {
             // Optional: Specify the location of your PurgeCSS config
@@ -100,6 +102,8 @@ module.exports = function (eleventyConfig) {
             // Optional: Set quiet: true to suppress terminal output
             quiet: false,
         });
+
+        
     }
 
     // Inline JS
