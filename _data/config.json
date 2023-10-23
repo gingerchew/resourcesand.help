@@ -1,7 +1,7 @@
 {
   "title": " ResourcesAnd.Help",
   "url": "/",
-  "domain": "resourcesand.help",
+  "domain": "resourcesandhelp.netlify.app",
   "language": "en",
   "logoUrl": "/src/_images/guide-dog.svg",
   "search": false,
@@ -37,5 +37,5 @@
   "showShareButtons": false,
   "showDate": false,
   "showRelatedPosts": false,
-  "relatedPostsTitle": "Related Posts"
+  "relatedPostsTitle": ""
 }
